@@ -5,7 +5,7 @@ import {StreamChat} from "stream-chat";
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
-import {OverlayProvider,Chat, ChannelList,Channel} from "stream-chat-expo";
+import {OverlayProvider,Chat} from "stream-chat-expo";
 import AuthContext from './context/Authentication';
 
 

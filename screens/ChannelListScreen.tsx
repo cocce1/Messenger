@@ -4,8 +4,9 @@ import { ChannelList } from 'stream-chat-expo';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import * as React from 'react';
 
-export default function TabOneScreen({
+export default function ChannelListScreen({
    navigation,
    }: RootTabScreenProps<'TabOne'>) {
 
@@ -14,10 +15,10 @@ export default function TabOneScreen({
   const onChannelPressed = (channel) => {
     navigation.navigate("Channel",{channel});
   };
-  return 
+  return (
     <ChannelList onSelect={onChannelPressed}/>
-  
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

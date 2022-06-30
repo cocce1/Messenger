@@ -1,4 +1,4 @@
-import {SafeAreaView, Text, View ,StyleSheet, Pressable,TextInput} from 'react-native';
+import {SafeAreaView, Text, View ,StyleSheet, Pressable,TextInput,Image} from 'react-native';
 import React, { useState,useContext } from 'react';
 import { useChatContext } from 'stream-chat-expo';
 import AuthContext from '../context/Authentication';
@@ -14,12 +14,13 @@ const {setUserId} = useContext(AuthContext);
 const {client} = useChatContext();
 
 
+
 const connectUser = async (userName: string,fullName: string) =>{
   await client.connectUser(
     {
       id:userName,
       name:fullName,
-     
+      
     },
     client.devToken(userName)
   );

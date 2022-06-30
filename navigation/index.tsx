@@ -13,12 +13,13 @@ import AuthContext from '../context/Authentication';
 import useColorScheme from '../hooks/useColorScheme';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import SignupScreen from '../screens/SignupScreen';
-import TabOneScreen from '../screens/ChannelListScreen';
-import TabTwoScreen from '../screens/UsersScreen';
+import ChannelListScreen from '../screens/ChannelListScreen';
+
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { useContext } from 'react';
 import ChannelScreen from '../screens/ChannelScreen';
+import UsersScreen from '../screens/UsersScreen';
 
 
 
@@ -48,13 +49,13 @@ const {userId} = useContext(AuthContext);
 
   return (
     <Stack.Navigator>
-      {!userId ?(
+     {!userId ?(
       <Stack.Screen 
       name="Auth" 
       component={SignupScreen} 
       options={{ headerShown: false }}
       />
-      ) :(
+     ) :(
       
         <>
       <Stack.Screen name="Root"
@@ -72,8 +73,8 @@ const {userId} = useContext(AuthContext);
 
       
 
-      </>
-      )}
+     </>
+     )}
     </Stack.Navigator>
   );
 }
@@ -104,7 +105,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabTwo"
-        component={TabTwoScreen}
+        component={UsersScreen}
         options={{
           title: 'Users',
           tabBarIcon: ({ color }) => <TabBarIcon name="users" color={color} />,

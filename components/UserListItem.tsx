@@ -16,7 +16,7 @@ const navigation = useNavigation();
             if(!user.id || !userId){
                 return;
             }
-            const channel = client.channel("messaging",{members:[user.id,userId]})
+            const channel = client.channel("messaging",{members:[user.id,userId]});
             await channel.watch();
 
             navigation.navigate("Channel",{channel});
